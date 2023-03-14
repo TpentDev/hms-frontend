@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './modules/shared/shared.module';
 import { PrinterModule } from './modules/printer/printer.module';
 import { SupplyModule } from './modules/supply/supply.module';
+import { CoreModule } from './modules/core/core.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SupplyModule } from './modules/supply/supply.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    CoreModule,
     SharedModule,
     PrinterModule,
     SupplyModule
