@@ -1,1 +1,22 @@
-<p>header works!</p>
+<mat-toolbar color="primary">
+        <div>
+            <button 
+                mat-icon-button 
+                onclick="this.blur()"
+                (click)="onToggleSidenav()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+    
+        <div>
+            <a routerLink="/home">HMS</a>
+        </div>
+
+        <!--
+            <div class="nav-items-container">
+                <a routerLink="/signup">Signup</a>
+                <a routerLink="/login">Login</a>
+                <a style="cursor:pointer" (click)="onLogout()">Logout</a>
+            </div>
+        -->
+</mat-toolbar>
