@@ -4,14 +4,13 @@ import { PrinterEditComponent } from "./components/printers/printer-edit/printer
 import { PrintersComponent } from "./components/printers/printers.component";
 
 const routes: Routes = [
-  { path: '', component: PrintersComponent },
-      { path: 'create-printer',
-          component: PrinterEditComponent 
-      },
-      { path: 'edit/:id',
-        component: PrinterEditComponent
-      }
-]
+  { path: '', component: PrintersComponent,
+    children: [
+      { path: 'create', component: PrinterEditComponent },
+      { path: 'edit/:id', component: PrinterEditComponent }
+    ]
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

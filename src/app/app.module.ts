@@ -8,6 +8,7 @@ import { SharedModule } from './modules/shared/shared.module';
 import { PrinterModule } from './modules/printer/printer.module';
 import { SupplyModule } from './modules/supply/supply.module';
 import { CoreModule } from './modules/core/core.module';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,11 @@ import { CoreModule } from './modules/core/core.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+
     CoreModule,
     SharedModule,
+
+    DashboardModule,
     PrinterModule,
     SupplyModule
   ],
