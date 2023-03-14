@@ -5,3 +5,16 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
 mat-sidenav {
     width: 15.5rem;
 }
+
+main{
+    background-color: whitesmoke;
+    padding: 5rem;
+}
+
+.router-outlet-container {
+    border: 2px solid black;
+    padding: 1em;
+    margin: auto;
+    height: 30em;
+    max-width: 50em;
+}
