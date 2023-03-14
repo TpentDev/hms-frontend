@@ -1,1 +1,13 @@
-<p>sidenav-list works!</p>
+<mat-nav-list>
+
+    <a mat-list-item routerLink="/printers" (click)="onClose()">
+        <span class="nav-caption">
+            <mat-icon>printer</mat-icon>Printers</span>
+    </a>
+
+    <a mat-list-item routerLink="/supplies" (click)="onClose()">
+        <span class="nav-caption">
+            <mat-icon>source</mat-icon>Supplies</span>
+    </a>
+
+</mat-nav-list>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav-list',
@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidenav-list.component.scss']
 })
 export class SidenavListComponent {
+  @Output() closeSidenav = new EventEmitter<void>();
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  onClose() {
+    this.closeSidenav.emit();
+  }
+
+  onLogout() {
+
+  }
 }
