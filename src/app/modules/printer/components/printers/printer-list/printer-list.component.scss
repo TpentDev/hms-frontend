@@ -1,0 +1,87 @@
+mat-row:hover mat-cell {
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+button {
+    box-shadow: none !important;
+}
+
+mat-checkbox {
+    pointer-events: none !important;
+    margin-left: -0.8em;
+}
+
+img {
+    /*border: 2px solid black;*/
+    margin-left: -1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+    width: 6em;
+    object-fit: cover;
+}
+
+.mat-column-image {
+    /*background-color: aqua;*/
+    max-width: 10%;
+}
+
+.mat-column-model {
+    /*background-color: red;*/
+    max-width: 10%;
+}
+
+.mat-column-manufacturer {
+    /*background-color: greenyellow;*/
+    max-width: 15%;
+}
+
+.mat-column-wifi {
+    /*background-color: bisque;*/
+    max-width: 7%;
+}
+
+
+.mat-column-usb {
+    /*background-color: aqua;*/
+    max-width: 7%;
+}
+
+
+.mat-column-ethernet {
+    /*background-color: red;*/
+    max-width: 7%;
+}
+
+
+.mat-column-scanner {
+    /*background-color: greenyellow;*/
+    max-width: 7%;
+}
+
+.mat-column-fax {
+    /*background-color: lightgrey;*/
+    max-width: 7%;
+}
+
+.mat-column-usb-flash-driver {
+    /*background-color: bisque;*/
+    max-width: 13%;
+}
+
+.mat-column-price {
+    /*background-color: aqua;*/
+    max-width: 7%;
+}
+
+.mat-column-actions {
+    /*background-color: lightgrey;*/
+    max-width: 10%;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    margin-left: -0.4em;
+}

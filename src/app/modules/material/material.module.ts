@@ -9,8 +9,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import {MatCheckboxModule} from "@angular/material/checkbox";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator'; 
 
 @NgModule({
   imports: [
@@ -25,7 +27,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   exports: [
     MatToolbarModule,
@@ -39,7 +43,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: []
 

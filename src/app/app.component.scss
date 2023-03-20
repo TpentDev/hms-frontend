@@ -8,13 +8,12 @@ mat-sidenav {
 
 main{
     background-color: whitesmoke;
-    padding: 5rem;
+    padding-top: 5rem;
 }
 
 .router-outlet-container {
     border: 2px solid black;
-    padding: 1em;
     margin: auto;
-    height: 30em;
-    max-width: 50em;
+    height: 40em;
+    max-width: 70rem;
 }
