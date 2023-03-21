@@ -4,13 +4,15 @@ import { PrinterEditComponent } from './components/printers/printer-edit/printer
 import { PrinterListComponent } from './components/printers/printer-list/printer-list.component';
 import { PrinterRoutingModule } from './printer-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { PrinterDialogComponent } from './components/printers/printer-dialog/printer-dialog.component';
 
 
 @NgModule({
   declarations: [
     PrintersComponent,
     PrinterListComponent,
-    PrinterEditComponent
+    PrinterEditComponent,
+    PrinterDialogComponent
   ],
   imports: [
     PrinterRoutingModule,
