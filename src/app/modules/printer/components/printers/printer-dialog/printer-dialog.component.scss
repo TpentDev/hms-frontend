@@ -1,0 +1,29 @@
+.printer-dialog {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+mat-dialog-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+mat-dialog-content {
+    max-height: initial;
+  }
+
+h2 {
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.5em;
+    margin-top: 1em;
+    margin-left: 1.5em;
+}

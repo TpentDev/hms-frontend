@@ -1,0 +1,51 @@
+mat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-icon {
+    color: black;
+    margin-right: 0.25em;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.5em;
+    margin-left: 0.5em;
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    /*border: 2px solid red;*/
+    margin-left: 0.5em;
+    margin-right: 1.5em;
+}
+
+.checkbox-left {
+    display: flex;
+    flex-direction: column;
+    /*border: 2px solid red;*/
+}
+
+.checkbox-right {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    /*border: 2px solid red;*/
+}

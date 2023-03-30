@@ -1,10 +1,9 @@
-import { DataSource } from '@angular/cdk/collections';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatCheckbox } from '@angular/material/checkbox';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import { PrinterDialogData } from '../../../interfaces/printerDialogData.interface';
 import { Printer } from '../../../models/printer.model';
+import { PrinterDialogService } from '../../../services/printer-dialog/printer-dialog.service';
 import { PrinterService } from '../../../services/printer/printer.service';
 
 const ELEMENT_DATA: Printer[] = [];
@@ -31,8 +30,7 @@ export class PrinterListComponent implements OnInit, AfterViewInit {
     'scanner',
     'fax',
     'usb-flash-driver',
-    'price',
-    'actions'
+    'price'
   ];
 
   totalItems: number = 0;
@@ -44,7 +42,9 @@ export class PrinterListComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private printerService: PrinterService) {}
+  constructor(
+    private printerService: PrinterService,
+    private printerDialogService: PrinterDialogService) {}
 
   ngOnInit(): void {
     this.printerService.fetchPrinters(0, 25, 'MODEL', 'ASC')
@@ -54,6 +54,10 @@ export class PrinterListComponent implements OnInit, AfterViewInit {
       }
     );
 
+  }
+
+  openPrinterDialog(printerData: PrinterDialogData) {
+    this.printerDialogService.fetchPrinter(printerData);
   }
 
   ngAfterViewInit() {

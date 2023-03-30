@@ -1,6 +1,6 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-import { PrinterEditComponent } from "./components/printers/printer-edit/printer-edit.component";
+import { PrinterEditComponent } from "./components/printers/printer-dialog/printer-edit/printer-edit.component";
 import { PrintersComponent } from "./components/printers/printers.component";
 
 const routes: Routes = [

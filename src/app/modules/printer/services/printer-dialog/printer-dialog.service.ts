@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
-import { PrinterDialogData } from '../../components/printers/interfaces/printerDialogData.interface';
 import { PrinterDialogComponent } from '../../components/printers/printer-dialog/printer-dialog.component';
+import { PrinterDialogData } from '../../interfaces/printerDialogData.interface';
 
 @Injectable({ providedIn: 'root' })
 export class PrinterDialogService {
@@ -19,8 +19,10 @@ export class PrinterDialogService {
         const dialogConfig = new MatDialogConfig();
 
         dialogConfig.disableClose = true;
-        dialogConfig.autoFocus = true;
+        dialogConfig.autoFocus = false;
         dialogConfig.data = { printer };
+        dialogConfig.maxHeight = '60em';
+        dialogConfig.minHeight = '52em';
         dialogConfig.maxWidth = '30em';
         dialogConfig.minWidth = 'min-content';
     

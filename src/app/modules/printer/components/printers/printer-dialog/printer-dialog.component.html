@@ -1,1 +1,30 @@
-<p>printer-dialog works!</p>
+<section class="printer-dialog">
+
+
+    <h2 mat-dialog-title>
+        Printer Details
+    </h2>
+    
+    <br>
+
+    <mat-dialog-content>
+        <app-printer-detail *ngIf="isDetailMode"
+            [printerData]="printerDialogData"
+            (dialogStateEvent)="fetchDialogState($event)">
+        </app-printer-detail>
+        <app-printer-edit *ngIf="!isDetailMode"
+            [printerData]="printerDialogData"
+            (dialogStateEvent)="fetchDialogState($event)">
+        </app-printer-edit>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <button
+            mat-icon-button
+            color="warn"
+            (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-dialog-actions>
+    
+</section>

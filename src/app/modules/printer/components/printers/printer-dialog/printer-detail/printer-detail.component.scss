@@ -1,0 +1,35 @@
+strong, span {
+    color: black;
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+mat-card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+img {
+    /*border: 2px solid black;*/
+    width: 6em;
+    object-fit: cover;
+}
+
+hr {
+    width: 100%;
+}

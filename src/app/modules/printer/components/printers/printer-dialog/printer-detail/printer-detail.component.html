@@ -1,0 +1,76 @@
+<section class="mat-elevation-z8">
+    <mat-card>
+        <br>
+        <mat-card-content>
+            <div>
+                <mat-label><strong>Model: </strong></mat-label>
+                <span>{{ printerData.printer.model }}</span>
+            </div>
+            <div>
+                <label><strong>Manufacturer: </strong></label>
+                <span>{{ printerData.printer.manufacturer }}</span>
+            </div>
+            <div>
+                <label><strong>Image: </strong></label>
+                <div>
+                    <img [src]="printerData.printer.image">
+                </div>
+            </div>
+            <div>
+                <label><strong>Description: </strong></label>
+                <span>{{ printerData.printer.description }}</span>
+            </div>
+            <div>
+                <label><strong>Wifi: </strong></label>
+                <span>{{ printerData.printer.hasWifi ? 'Yes' : 'No' }}</span>
+            </div>
+
+            <div>
+                <label><strong>Usb: </strong></label>
+                <span>{{ printerData.printer.hasUsb ? 'Yes' : 'No' }}</span>
+            </div>
+            <div>
+                <label><strong>Ethernet: </strong></label>
+                <span>{{ printerData.printer.hasEthernet ? 'Yes' : 'No' }}</span>
+            </div>
+            <div>
+                <label><strong>Scanner: </strong></label>
+                <span>{{ printerData.printer.hasScanner ? 'Yes' : 'No' }}</span>
+            </div>
+
+            <div>
+                <label><strong>Fax: </strong></label>
+                <span>{{ printerData.printer.hasFax ? 'Yes' : 'No' }}</span>
+            </div>
+
+            <div>
+                <label><strong>Usb Flash Driver: </strong></label>
+                <span>{{ printerData.printer.hasUsbFlashDriver ? 'Yes' : 'No' }}</span>
+            </div>
+
+            <div>
+                <label><strong>Price: </strong></label>
+                {{ printerData.printer.price }}
+            </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <div class="button-group">
+                <button
+                    mat-raised-button color="primary"
+                    (click)="editPrinter()">
+                    Edit
+                </button>
+                
+                <button 
+                    mat-raised-button color="warn"
+                    (click)="deletePrinter(printerData.printer.id)">
+                    Delete
+                </button>
+            </div>
+        </mat-card-actions>
+            
+    </mat-card>
+</section>
+
+<!-- (click)="onCancel()" -->

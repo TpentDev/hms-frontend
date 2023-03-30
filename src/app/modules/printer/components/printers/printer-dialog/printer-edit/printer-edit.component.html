@@ -1,0 +1,127 @@
+<section class="mat-elevation-z8">
+    <form 
+        [formGroup]="printerForm"
+        (ngSubmit)="onSubmit()">
+        <mat-card>
+            <mat-card-content>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Model</mat-label>
+                    <input 
+                        type="text"
+                        matInput  
+                        placeholder="Model"
+                        formControlName="model">
+
+                    <div matSuffix>
+                        <mat-icon>model</mat-icon>
+                    </div>
+                    <mat-hint>Please enter a model.</mat-hint>
+                    <mat-error>Missing model.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Manufacturer</mat-label>
+                    <input 
+                        type="text"
+                        matInput  
+                        placeholder="Manufacturer"
+                        formControlName="manufacturer">
+
+                    <div matSuffix>
+                        <mat-icon>manufacturer</mat-icon>
+                    </div>
+                    <mat-hint>Please enter a manufacturer.</mat-hint>
+                    <mat-error>Missing manufacturer.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <textarea 
+                        type="text"
+                        matInput  
+                        placeholder="Description"
+                        formControlName="description">
+                    </textarea>
+                    <div matSuffix>
+                        <mat-icon>description</mat-icon>
+                    </div>
+                    <mat-hint>Please enter a description.</mat-hint>
+                    <mat-error>Missing description.</mat-error>
+                </mat-form-field>
+
+
+                <div class="checkbox-container">
+
+                    <div class="checkbox-left">
+                        <mat-checkbox
+                            formControlName="hasWifi">
+                            Wifi
+                        </mat-checkbox>
+
+                        <mat-checkbox
+                            formControlName="hasEthernet">
+                            Ethernet
+                        </mat-checkbox>
+
+                        <mat-checkbox
+                            formControlName="hasUsb">
+                            Usb
+                        </mat-checkbox>
+                    </div>
+
+                    <div class="checkbox-right">
+                        <mat-checkbox
+                            formControlName="hasScanner">
+                            Scanner
+                        </mat-checkbox>
+
+                        <mat-checkbox
+                            formControlName="hasFax">
+                            Fax
+                        </mat-checkbox>
+
+                        <mat-checkbox
+                            formControlName="hasUsbFlashDriver">
+                            Usb Flash Driver
+                        </mat-checkbox>
+                    </div>
+
+                </div>
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Price</mat-label>
+                    <input 
+                        type="number"
+                        matInput  
+                        placeholder="Price"
+                        formControlName="price">
+                    <div matSuffix>
+                        <mat-icon>price</mat-icon>
+                    </div>
+                    <mat-hint>Please enter a price.</mat-hint>
+                    <mat-error>Missing price.</mat-error>
+                </mat-form-field>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <div
+                    class="button-group">
+                        <button 
+                            type="submit" 
+                            mat-raised-button color="primary" 
+                            [disabled]="printerForm.invalid">
+                            {{ isAddMode ? 'Save' : 'Update' }}
+                        </button>
+                        <button 
+                            type="button" 
+                            mat-button color="primary" 
+                            (click)="onCancel()">
+                            Cancel
+                        </button>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</section>
