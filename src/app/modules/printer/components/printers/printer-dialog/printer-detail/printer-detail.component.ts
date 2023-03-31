@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { PrinterDialogState } from 'src/app/modules/printer/enums/printerDialogState.enum';
 import { PrinterDialogData } from 'src/app/modules/printer/interfaces/printerDialogData.interface';
+import { PrinterDialogService } from 'src/app/modules/printer/services/printer-dialog/printer-dialog.service';
 
 @Component({
   selector: 'app-printer-detail',
@@ -12,13 +13,12 @@ export class PrinterDetailComponent {
   @Input()
   public printerData!: PrinterDialogData;
 
-  @Output()
-  dialogStateEvent: EventEmitter<PrinterDialogState> = new EventEmitter<PrinterDialogState>();
-
-  constructor() {}
+  constructor(
+    private printerDialogService: PrinterDialogService
+  ) {}
 
   editPrinter() {
-    this.dialogStateEvent.emit(PrinterDialogState.Edit);
+    this.printerDialogService.setDialogState(PrinterDialogState.Edit);
   }
   
   deletePrinter(id: string) {

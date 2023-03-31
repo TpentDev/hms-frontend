@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PrinterDialogService } from '../../services/printer-dialog/printer-dialog.service';
 
 @Component({
   selector: 'app-printers',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class PrintersComponent {
 
+  constructor(
+    private printerDialogService: PrinterDialogService
+  ) {}
+
+  createPrinter() {
+    this.printerDialogService.addPrinter();
+  }
 }

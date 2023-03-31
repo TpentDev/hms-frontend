@@ -2,19 +2,17 @@
 
 
     <h2 mat-dialog-title>
-        Printer Details
+        {{ isDetailMode ? 'Printer Details' : isEditMode ? 'Edit Printer' : 'Add Printer' }}
     </h2>
     
     <br>
 
     <mat-dialog-content>
         <app-printer-detail *ngIf="isDetailMode"
-            [printerData]="printerDialogData"
-            (dialogStateEvent)="fetchDialogState($event)">
+            [printerData]="printerDialogData">
         </app-printer-detail>
         <app-printer-edit *ngIf="!isDetailMode"
-            [printerData]="printerDialogData"
-            (dialogStateEvent)="fetchDialogState($event)">
+            [printerData]="printerDialogData">
         </app-printer-edit>
     </mat-dialog-content>
 

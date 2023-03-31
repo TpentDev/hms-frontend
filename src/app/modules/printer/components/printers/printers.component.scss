@@ -3,3 +3,10 @@
     padding: 1em;
     height: 80%;
 }
+
+.add-printer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1em;
+}

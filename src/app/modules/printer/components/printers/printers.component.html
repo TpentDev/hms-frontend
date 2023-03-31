@@ -1,5 +1,16 @@
 <p>printers works!</p>
 
+<div class="add-printer">
+  
+    <h1 class="title">Printers</h1>
+
+    <button mat-mini-fab
+        [matTooltip]="'Create a new Printer'" matTooltipPosition="above"
+        [matTooltipHideDelay]="2000" (click)="createPrinter()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+
 <section class="printer-list-container">
     <app-printer-list></app-printer-list>
 </section>

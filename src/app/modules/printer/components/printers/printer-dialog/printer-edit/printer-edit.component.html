@@ -114,7 +114,7 @@
                             [disabled]="printerForm.invalid">
                             {{ isAddMode ? 'Save' : 'Update' }}
                         </button>
-                        <button 
+                        <button *ngIf="!isAddMode"
                             type="button" 
                             mat-button color="primary" 
                             (click)="onCancel()">

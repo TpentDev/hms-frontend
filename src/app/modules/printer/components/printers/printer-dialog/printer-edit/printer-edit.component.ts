@@ -5,6 +5,7 @@ import { first, Subscription } from 'rxjs';
 import { PrinterDialogState } from 'src/app/modules/printer/enums/printerDialogState.enum';
 import { PrinterDialogData } from 'src/app/modules/printer/interfaces/printerDialogData.interface';
 import { PrinterRequestData } from 'src/app/modules/printer/interfaces/printerRequestData.interface';
+import { PrinterDialogService } from 'src/app/modules/printer/services/printer-dialog/printer-dialog.service';
 import { PrinterService } from 'src/app/modules/printer/services/printer/printer.service';
 import { PrinterDialogComponent } from '../printer-dialog.component';
 
@@ -23,28 +24,24 @@ export class PrinterEditComponent implements OnInit {
 
   isAddMode!: boolean;
 
-  @Output()
-  dialogStateEvent: EventEmitter<PrinterDialogState> = new EventEmitter<PrinterDialogState>();
-
   createPrinterSubscription!: Subscription;
   updatePrinterSubscription!: Subscription;
 
   constructor(
-    private printerDialogRef: MatDialogRef<PrinterDialogComponent>,
     private formBuilder: FormBuilder,
+    private printerDialogService: PrinterDialogService,
     private printerService: PrinterService
   ) {}
 
   ngOnInit() {
+    this.defineFormMode();
+
     this.createPrinterForm();
 
-    if (!this.printerData) {
-      this.isAddMode = true;
-    } else {
-      this.isAddMode = false;
+    if (!this.isAddMode) {
+      this.printerForm.patchValue(this.printerData.printer);
     }
 
-    this.printerForm.patchValue(this.printerData.printer);
   }
 
   onSubmit() {
@@ -73,7 +70,7 @@ export class PrinterEditComponent implements OnInit {
   }
 
   private updatePrinter(printerData: PrinterRequestData) {
-    this.printerDialogRef.close();
+    this.printerDialogService.closeDialog();
     /*
     this.updatePrinterSubscription = this.printerService.
       updatePrinter(1, printerData)
@@ -84,7 +81,20 @@ export class PrinterEditComponent implements OnInit {
   }
 
   onCancel() {
-    this.dialogStateEvent.emit(PrinterDialogState.Detail);
+    if (!this.isAddMode) {
+      this.printerDialogService.printerDialogSubject.next(PrinterDialogState.Detail);
+    }
+  }
+
+  private defineFormMode() {
+    if (!this.printerData) {
+      this.isAddMode = true;
+      this.printerDialogService.printerDialogSubject.next(PrinterDialogState.Add);
+      console.log("Add Mode: "+this.isAddMode);
+    } else {
+      this.isAddMode = false;
+      console.log("Add Mode: "+this.isAddMode);
+    }
   }
 
   createPrinterForm() {
